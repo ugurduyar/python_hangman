@@ -53,7 +53,6 @@ hangman_stages = ['''
 
 import random
 import json
-from time import sleep
 from urllib.request import urlopen
 url = "https://www.randomlists.com/data/words.json"
 response = urlopen(url)
@@ -61,8 +60,7 @@ data_json = json.loads(response.read())
 words = (data_json["data"])
 random_word = random.choice(words)
 norepeat = list(dict.fromkeys(random_word))
-print(norepeat)
-print(random_word)
+# print(random_word) for debug if needed
 right_guesses = []
 wrong_guesses = []
 
@@ -82,6 +80,7 @@ while True:
         break
     if len(wrong_guesses) == 6:
         print("You've killed him!")
+        print("The word was {}".format(random_word))
         break
     guess = input("\nMake a guess! \n")
     if guess in right_guesses or guess in wrong_guesses:

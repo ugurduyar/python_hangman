@@ -78,7 +78,7 @@ while True:
         print("You've killed him!")
         print("The word was {}".format(random_word)) # prints the right word if you lose
         break
-    guess = input("\nMake a guess! \n")
+    guess = input("\nMake a guess! \n")[0] # [0] at the end of the line allows us to accept only the first character given by the user
     if guess in right_guesses or guess in wrong_guesses: # checks if user typed that character before
         print("You've guessed it before!")
     else:

@@ -22,7 +22,7 @@ def right_wrong():
 while True:
     if len(wrong_guesses) == 6:
         break
-    guess = input("Make a guess! \n")
+    guess = input("\nMake a guess! \n")
     if guess in right_guesses or guess in wrong_guesses:
         print("You've guessed it before!")
     else:
@@ -30,9 +30,9 @@ while True:
 
     for guess in random_word:
         if guess in right_guesses:
-            print(f"{guess}", end="")
+            print(guess,end="")
         else:
-            print("_", end="")
+            print(" _ ",end="")
 
 
 

@@ -57,8 +57,7 @@ from urllib.request import urlopen
 url = "https://www.randomlists.com/data/words.json"
 response = urlopen(url)
 data_json = json.loads(response.read())
-words = (data_json["data"])
-random_word = random.choice(words)
+random_word = random.choice(data_json["data"])
 norepeat = list(dict.fromkeys(random_word))
 # print(random_word) for debug if needed
 right_guesses = []

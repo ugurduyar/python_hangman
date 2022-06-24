@@ -58,9 +58,11 @@ hangman_stages = ['''
  / \  |
       |
 =========''']
+words_array = list(random_word)
+print(words_array)
 print(random_word)
 while i < len(random_word):
-    print("_ " * len(random_word))
+    print("_ " * len(words_array))
     guess = input("Make a guess! ")
     print(hangman_stages[guess_count])
     if guess_count == 6:

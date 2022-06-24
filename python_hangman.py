@@ -1,3 +1,7 @@
+import random
+import json
+from urllib.request import urlopen
+
 hangman_stages = ['''
   +---+
   |   |
@@ -49,11 +53,6 @@ hangman_stages = ['''
       |
 =========''']
 
-
-
-import random
-import json
-from urllib.request import urlopen
 url = "https://www.randomlists.com/data/words.json"
 response = urlopen(url)
 data_json = json.loads(response.read())
@@ -70,7 +69,6 @@ def right_wrong():
     else:
         wrong_guesses.append(guess)
         print("That was wrong!")
-
 
 while True:
     print(hangman_stages[len(wrong_guesses)])
